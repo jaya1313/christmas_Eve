@@ -1,3 +1,48 @@
 body{
-    background-color: #0f2863;
+    background-color: #0b1c44;
+    height: 200vh;
+}
+.navbar_img{
+   margin-top: 50px;
+   margin-left: 50px;
+   position: relative;
+   animation: moveX 3s infinite alternate ease-in-out;
+}
+@keyframes moveX{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(1200px);
+    }
+}
+h1{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 100px;
+    font-family: Bradley Hand ITC;
+    color: beige;
+    text-shadow: 0 4px 10px rgb(177, 152, 61);
+}
+.snow{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: snowfall 10s linear infinite;
+    z-index: -1;
+    background-image: 
+    radial-gradient(20px 20px at 20px 30px,white,transparent),
+    radial-gradient(20px 20px at 50px 80px,white,transparent),
+    radial-gradient(20px 20px at 90px 40px,white,transparent);
+    background-size: 200px 200px;   
+}
+@keyframes snowfall{
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: 0 200px;
+    }
 }
