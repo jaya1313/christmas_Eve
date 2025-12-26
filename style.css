@@ -1,12 +1,13 @@
 body{
-    background-color: #0b1c44;
+    
+    background-color:hsl(222, 71%, 11%);
     height: 200vh;
 }
 .navbar_img{
    margin-top: 50px;
    margin-left: 50px;
    position: relative;
-   animation: moveX 3s infinite alternate ease-in-out;
+   animation: moveX 8s infinite alternate ease-in-out;
 }
 @keyframes moveX{
     from{
@@ -24,25 +25,139 @@ h1{
     color: beige;
     text-shadow: 0 4px 10px rgb(177, 152, 61);
 }
-.snow{
+#snow{
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    animation: snowfall 10s linear infinite;
     z-index: -1;
-    background-image: 
-    radial-gradient(20px 20px at 20px 30px,white,transparent),
-    radial-gradient(20px 20px at 50px 80px,white,transparent),
-    radial-gradient(20px 20px at 90px 40px,white,transparent);
-    background-size: 200px 200px;   
 }
-@keyframes snowfall{
-    from{
-        background-position: 0 0;
+.img2{
+    position: relative;
+    width: 1500px;
+    height: 400px;
+    background-image: url("../images/bg2.png");
+    background-size: 150% auto;
+    background-repeat: no-repeat;
+    background-position: 0% center;
+    image-rendering: auto;
+    align-items: center;
+    opacity: 0.5;
+    
+}
+.img2>img{
+    margin-top: 50px;
+}
+@keyframes moveInside{
+    0%{
+        background-position: 0% center;
     }
-    to{
-        background-position: 0 200px;
+    100%{
+        background-position: 100% center;
     }
+}
+.img2{
+    animation: moveInside 12s linear infinite;
+}
+.text{
+    text-align: center;
+    padding: 30px  30px;
+    margin-top: 70px;
+    font-size: 40px;
+    font-family: Brush Script MT;
+    color: white;
+    text-shadow: 0 4px 10px rgb(235, 233, 225);
+}
+.select{
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    background-color: rgb(246, 245, 137);
+    color: rgb(11, 15, 15);
+    text-shadow: 0px 4px 10px rgb(22, 24, 24);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 200px auto 0;
+}
+
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #333;
+  
+}
+
+.card p {
+  color: #666;
+  display: none;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Front */
+.card-front {
+  background-color: white;
+  color: #333;
+}
+
+/* Back */
+.card-back {
+  background-color: #d62828;
+  color: white;
+  font-size: 20px;
+  font-family: cursive;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
 }
